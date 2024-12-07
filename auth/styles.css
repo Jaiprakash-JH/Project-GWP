@@ -1,0 +1,170 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Background Animation */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ffcc00, #ff9900, #ff6600, #ff0033);
+
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Container */
+.container {
+  width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Toggle Buttons */
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  animation: slide 3s;
+}
+@keyframes slide {
+  
+}
+
+.toggle {
+  flex: 1;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.toggle.active {
+  background: rgba(255, 255, 255, 0.3);
+  color: #000;
+}
+
+/* Form Styles */
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.form.active {
+  display: flex;
+}
+
+/* Input Box Styles */
+.form input {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2); /* Slightly opaque background */
+  color: #fff;
+  outline: none;
+  border-radius: 5px;
+  transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+.form input:focus {
+  background: rgba(255, 255, 255, 0.4); /* Highlight on focus */
+  border-color: #ffcc00; /* Change border color on focus */
+  color: #000; /* Change text color on focus */
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.8); /* Add a glowing effect */
+}
+
+
+.form button {
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Button Animation */
+.animated-btn {
+  background: linear-gradient(90deg, #ff6a5c, #ff758c);
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.4s;
+}
+
+.animated-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 20px rgba(255, 105, 135, 0.5);
+}
+/* Style for the Login and Signup Buttons */
+#loginBtn, #signupBtn {
+  border-radius: 20px;
+  font-size: 18px;
+  background: linear-gradient(90deg, #ff6a5c, #ff758c); /* Gradient background */
+  color: #fff;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
+#loginBtn:hover, #signupBtn:hover {
+  background: linear-gradient(90deg, #ff758c, #ff6a5c); 
+  transform: scale(1.05); 
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); 
+}
+
+#loginBtn.active, #signupBtn.active {
+  background: rgba(255, 255, 255, 0.3); 
+  color: #000; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+}
+/* Style for error messages */
+input:invalid {
+  border: 2px solid red;
+}
+
+input:invalid + .error-message {
+  display: block;
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Custom error message for inputs */
+.error-message {
+  display: none;
+}
+
+
